@@ -1,0 +1,66 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateProductInput {
+  """Product name on model"""
+  name: String
+
+  """price name on model"""
+  price: Float
+
+  """shortDescription name on model"""
+  shortDescription: String
+}
+
+input CreateUserInput {
+  email: String
+  firebaseId: String
+  lastname: String
+  name: String
+  password: String
+}
+
+input FiltersProductInput {
+  """Product name on model"""
+  name: String
+
+  """price name on model"""
+  price: Float
+
+  """shortDescription name on model"""
+  shortDescription: String
+}
+
+type Mutation {
+  createProduct(createProductInput: CreateProductInput!): Product!
+  createUser(createUserInput: CreateUserInput!): User!
+  removeProduct(id: String!): Product!
+  removeUser(id: Int!): User!
+  updateProduct(updateProductInput: String!): Product!
+  updateUser(updateUserInput: String!): User!
+}
+
+type Product {
+  """Product name on model"""
+  name: String
+
+  """price name on model"""
+  price: Float
+
+  """shortDescription name on model"""
+  shortDescription: String
+}
+
+type Query {
+  getProduct(id: String!): Product!
+  getProducts(getProducts: FiltersProductInput!): [Product!]!
+  user(id: Int!): User!
+}
+
+type User {
+  email: String
+  lastname: String
+  name: String
+  password: String
+}
