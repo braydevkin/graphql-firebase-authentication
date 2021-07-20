@@ -53,15 +53,6 @@ export class UserService {
   }
 
   async create(createUserInput: CreateUserInput): Promise<void> {
-
-    // const exists = await this.userRepository.getAll({
-    //   email: createUserInput.email,
-    // });
-
-    // if (exists) {
-    //   throw new HttpException('E-mail already exist', HttpStatus.BAD_REQUEST);
-    // }
-
     try {
       await this.createUserWithFirebaseAuthentication(createUserInput);
       this.logger.log(`Registering User ${createUserInput.email}`);
